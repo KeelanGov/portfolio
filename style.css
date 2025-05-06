@@ -72,10 +72,9 @@ main.container {
     color: #bdc3c7;
 }
 
-/* --- CTA Button Changed to Blue --- */
 .cta-button {
     display: inline-block;
-    background-color: #3498db; /* CHANGED from orange to blue */
+    background-color: #3498db; /* Blue */
     color: #ffffff;
     padding: 12px 25px;
     text-decoration: none;
@@ -87,7 +86,7 @@ main.container {
 }
 
 .cta-button:hover {
-    background-color: #2980b9; /* CHANGED from darker orange to darker blue */
+    background-color: #2980b9; /* Darker Blue */
     transform: translateY(-2px);
 }
 
@@ -214,12 +213,12 @@ section p a:hover {
     padding: 20px;
     border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    border-left: 5px solid #3498db; /* CHANGED from orange to blue */
+    border-left: 5px solid #3498db; /* Blue accent */
 }
 
 .expertise-detailed-list li i { /* Icon styling */
     font-size: 2.2em;
-    color: #3498db; /* CHANGED from orange to blue */
+    color: #3498db; /* Blue accent */
     margin-right: 20px;
     margin-top: 5px;
     min-width: 40px;
@@ -290,16 +289,10 @@ section p a:hover {
 }
 
 /* Technical Prowess (Skills) */
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
 .skill-category {
     background: #fdfdfd;
-    padding: 15px;
-    border-radius: 5px;
+    padding: 20px;
+    border-radius: 6px;
     border: 1px solid #e0e0e0;
 }
 
@@ -307,13 +300,35 @@ section p a:hover {
     font-size: 1.15em;
     color: #2c3e50;
     border-bottom: 2px solid #3498db; /* Blue border */
-    padding-bottom: 5px;
-    margin-bottom: 12px;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
 }
-.skill-category p {
+
+.skill-category ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.skill-category ul li {
     font-size: 0.95em;
     line-height: 1.6;
+    color: #444;
+    padding: 4px 0;
 }
+
+
+.skill-category ul li::before {
+    content: "•";
+    color: #3498db;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 5px;
+}
+
 
 /* Contact Section */
 .contact-section {
@@ -355,21 +370,11 @@ section p a:hover {
     color: #3498db; /* Blue hover */
 }
 
-/* CV button already uses .cta-button styles, but we can override if needed */
-/* Specific CV button style if different from main CTA */
 .cv-button {
-    /* Inherits .cta-button styles, now blue. */
-    /* If you wanted it different, e.g., outlined: */
-    /* background-color: transparent; */
-    /* border: 2px solid #3498db; */
-    /* color: #3498db; */
-    margin-top: 15px;
+    margin-top: 15px; /* Already inherits .cta-button styles (now blue) */
 }
 .cv-button:hover {
-   /* Inherits .cta-button:hover styles, now darker blue background */
-   /* If outlined, maybe: */
-   /* background-color: #3498db; */
-   /* color: #ffffff; */
+    /* Already inherits .cta-button:hover styles (now darker blue) */
 }
 
 /* Footer */
@@ -420,4 +425,9 @@ footer p {
      .expertise-detailed-list li div h5 {
         text-align: center;
     }
+    /*
+    .skill-category ul li {
+        text-align: center;
+    }
+    */
 }
