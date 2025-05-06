@@ -19,23 +19,26 @@ body {
     min-height: 100vh;
 }
 
-main.container {
+main.container { /* This is the main content area that uses .container */
     flex-grow: 1;
 }
 
+/* --- THIS IS THE CRUCIAL RULE FOR PAGE WIDTH --- */
 .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 960px; /* Restricts maximum width of the content area */
+    margin: 0 auto;   /* Centers the content area on the page */
+    padding: 0 20px;  /* Adds horizontal padding inside the container */
 }
+/* --- END OF CRUCIAL CONTAINER RULE --- */
+
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); /* Gradient background */
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
     color: #ffffff;
-    padding: 60px 20px 50px;
+    padding: 60px 20px 50px; /* Note: Hero section's .container is nested, so padding here is fine */
     text-align: center;
-    border-bottom: 5px solid #2980b9; /* Darker blue accent */
+    border-bottom: 5px solid #2980b9;
 }
 
 .profile-picture {
@@ -60,7 +63,7 @@ main.container {
     font-weight: 400;
     margin-bottom: 10px;
     color: #ecf0f1;
-    max-width: 750px;
+    max-width: 750px; /* This is for the text block itself within the hero */
     margin-left: auto;
     margin-right: auto;
 }
@@ -91,7 +94,7 @@ main.container {
 }
 
 /* General Section Styling */
-section {
+section { /* Sections are typically *inside* main.container */
     background-color: #ffffff;
     padding: 35px 30px;
     margin-bottom: 30px;
@@ -104,7 +107,7 @@ section h2 {
     color: #2c3e50;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 3px solid #3498db; /* Blue border consistent */
+    border-bottom: 3px solid #3498db;
     font-weight: 600;
     letter-spacing: -0.5px;
 }
@@ -114,17 +117,17 @@ section p {
     color: #555;
 }
 section p a {
-    color: #3498db; /* Blue for links */
+    color: #3498db;
     font-weight: 600;
     text-decoration: none;
 }
 section p a:hover {
     text-decoration: underline;
-    color: #2980b9; /* Darker blue hover */
+    color: #2980b9;
 }
 
 
-/* Centralized Headings */
+/* Centralized Headings for sections */
 #signature-systems h2,
 #core-expertise h2,
 #career-journey h2,
@@ -157,7 +160,7 @@ section p a:hover {
 
 .system-card-icon {
     font-size: 2em;
-    color: #3498db; /* Blue icons */
+    color: #3498db;
     margin-bottom: 15px;
     text-align: left;
 }
@@ -176,7 +179,7 @@ section p a:hover {
 }
 .system-card .system-focus strong {
     font-style: normal;
-    color: #3498db; /* Blue accent */
+    color: #3498db;
     font-weight: 600;
 }
 
@@ -213,19 +216,19 @@ section p a:hover {
     padding: 20px;
     border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    border-left: 5px solid #3498db; /* Blue accent */
+    border-left: 5px solid #3498db;
 }
 
-.expertise-detailed-list li i { /* Icon styling */
+.expertise-detailed-list li i {
     font-size: 2.2em;
-    color: #3498db; /* Blue accent */
+    color: #3498db;
     margin-right: 20px;
     margin-top: 5px;
     min-width: 40px;
     text-align: center;
 }
 
-.expertise-detailed-list li div { /* Text block container */
+.expertise-detailed-list li div {
     flex: 1;
 }
 
@@ -245,7 +248,7 @@ section p a:hover {
 /* Career Journey (Timeline-like) */
 .timeline .timeline-item {
     padding-left: 25px;
-    border-left: 3px solid #3498db; /* Blue line */
+    border-left: 3px solid #3498db;
     position: relative;
     margin-bottom: 25px;
     padding-bottom: 10px;
@@ -258,14 +261,14 @@ section p a:hover {
     top: 0;
     width: 15px;
     height: 15px;
-    background-color: #fff; /* Hollow dot */
-    border: 3px solid #3498db; /* Blue border */
+    background-color: #fff;
+    border: 3px solid #3498db;
     border-radius: 50%;
     z-index: 1;
 }
 
 .timeline .timeline-item:first-child::before {
-    background-color: #3498db; /* Filled blue dot for first item */
+    background-color: #3498db;
 }
 
 .timeline .timeline-item:last-child {
@@ -299,13 +302,13 @@ section p a:hover {
 .skill-category h4 {
     font-size: 1.15em;
     color: #2c3e50;
-    border-bottom: 2px solid #3498db; /* Blue border */
+    border-bottom: 2px solid #3498db;
     padding-bottom: 8px;
     margin-bottom: 15px;
 }
 
 .skill-category ul {
-    list-style: none;
+    list-style: none; /* Removes default browser bullets if ::before is not used */
     padding-left: 0;
     margin-top: 0;
 }
@@ -314,34 +317,34 @@ section p a:hover {
     font-size: 0.95em;
     line-height: 1.6;
     color: #444;
-    padding: 4px 0;
-    position: relative;
-    padding-left: 15px;
+    padding: 4px 0; /* Vertical spacing */
+    position: relative; /* Needed for absolute positioning of ::before */
+    padding-left: 20px; /* Make space for the custom bullet */
 }
 
-
 .skill-category ul li::before {
-    content: "•";
-    color: #3498db;
+    content: "•"; /* Bullet character */
+    color: #3498db; /* Blue color for the bullet */
     font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+    display: inline-block; /* Needed for proper positioning */
     position: absolute;
-    left: 5px;
+    left: 0px; /* Position bullet at the start of the padding-left area */
+    top: 4px; /* Adjust vertical alignment if needed, matches li padding roughly */
+    /* width: 1em; /* Not strictly necessary if using left positioning */
+    /* margin-left: -1em; /* Not needed with this positioning method */
 }
 
 
 /* Contact Section */
 .contact-section {
-    background-color: #2c3e50; /* Dark blue background */
+    background-color: #2c3e50;
     color: #ecf0f1;
     text-align: center;
 }
 
 .contact-section h2 {
     color: #ffffff;
-    border-bottom-color: #3498db; /* Blue border */
+    border-bottom-color: #3498db;
     font-size: 1.8em;
 }
 
@@ -369,14 +372,14 @@ section p a:hover {
     font-size: 1.1em;
 }
 .contact-links a:hover {
-    color: #3498db; /* Blue hover */
+    color: #3498db;
 }
 
 .cv-button {
-    margin-top: 15px; /* Already inherits .cta-button styles (now blue) */
+    margin-top: 15px;
 }
 .cv-button:hover {
-    /* Already inherits .cta-button:hover styles (now darker blue) */
+    /* Inherits from .cta-button:hover */
 }
 
 /* Footer */
@@ -427,9 +430,11 @@ footer p {
      .expertise-detailed-list li div h5 {
         text-align: center;
     }
-    /*
     .skill-category ul li {
-        text-align: center;
+        /* padding-left: 10px; If you want less indent on mobile for custom bullets */
+        /* text-align: center; // Only if you want centered text for list items too */
     }
-    */
+    .skill-category ul li::before {
+        /* left: -5px; Adjust if padding-left of li is changed for mobile */
+    }
 }
