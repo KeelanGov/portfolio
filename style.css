@@ -315,6 +315,8 @@ section p a:hover {
     line-height: 1.6;
     color: #444;
     padding: 4px 0;
+    position: relative;
+    padding-left: 15px;
 }
 
 
