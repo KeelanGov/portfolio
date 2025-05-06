@@ -330,8 +330,6 @@ section p a:hover {
     position: absolute;
     left: 0px; /* Position bullet at the start of the padding-left area */
     top: 4px; /* Adjust vertical alignment if needed, matches li padding roughly */
-    /* width: 1em; /* Not strictly necessary if using left positioning */
-    /* margin-left: -1em; /* Not needed with this positioning method */
 }
 
 
