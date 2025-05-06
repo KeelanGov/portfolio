@@ -33,7 +33,7 @@ main.container {
 .hero-section {
     background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); /* Gradient background */
     color: #ffffff;
-    padding: 60px 20px 50px; /* Adjusted padding slightly */
+    padding: 60px 20px 50px;
     text-align: center;
     border-bottom: 5px solid #2980b9; /* Darker blue accent */
 }
@@ -49,15 +49,15 @@ main.container {
 }
 
 .hero-section h1 {
-    font-size: 2.8em; /* Adjusted */
+    font-size: 2.8em;
     margin-bottom: 10px;
     font-weight: 700;
     letter-spacing: -1px;
 }
 
 .hero-tagline {
-    font-size: 1.4em; /* Adjusted */
-    font-weight: 400; /* Slightly bolder */
+    font-size: 1.4em;
+    font-weight: 400;
     margin-bottom: 10px;
     color: #ecf0f1;
     max-width: 750px;
@@ -66,19 +66,20 @@ main.container {
 }
 
 .hero-sub-tagline {
-    font-size: 1.15em; /* Adjusted */
+    font-size: 1.15em;
     font-weight: 300;
     margin-bottom: 25px;
     color: #bdc3c7;
 }
 
+/* --- CTA Button Changed to Blue --- */
 .cta-button {
     display: inline-block;
-    background-color: #e67e22; /* Orange accent */
+    background-color: #3498db; /* CHANGED from orange to blue */
     color: #ffffff;
     padding: 12px 25px;
     text-decoration: none;
-    border-radius: 25px; /* Pill shape */
+    border-radius: 25px;
     font-weight: 600;
     font-size: 1.1em;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -86,7 +87,7 @@ main.container {
 }
 
 .cta-button:hover {
-    background-color: #d35400; /* Darker orange */
+    background-color: #2980b9; /* CHANGED from darker orange to darker blue */
     transform: translateY(-2px);
 }
 
@@ -100,11 +101,11 @@ section {
 }
 
 section h2 {
-    font-size: 2em; /* Adjusted */
+    font-size: 2em;
     color: #2c3e50;
-    margin-bottom: 30px; /* Increased spacing */
+    margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 3px solid #3498db;
+    border-bottom: 3px solid #3498db; /* Blue border consistent */
     font-weight: 600;
     letter-spacing: -0.5px;
 }
@@ -113,26 +114,26 @@ section p {
     margin-bottom: 1em;
     color: #555;
 }
-/* Styling for links within paragraph text, like the MLOps community link */
 section p a {
-    color: #3498db;
+    color: #3498db; /* Blue for links */
     font-weight: 600;
     text-decoration: none;
 }
 section p a:hover {
     text-decoration: underline;
-    color: #2980b9;
+    color: #2980b9; /* Darker blue hover */
 }
 
 
-/* Signature Systems & Models Section */
+/* Centralized Headings */
 #signature-systems h2,
-#core-expertise h2, /* Centralize this heading too */
+#core-expertise h2,
 #career-journey h2,
 #technical-prowess h2 {
     text-align: center;
 }
 
+/* Signature Systems & Models Section */
 .systems-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -157,13 +158,13 @@ section p a:hover {
 
 .system-card-icon {
     font-size: 2em;
-    color: #3498db;
+    color: #3498db; /* Blue icons */
     margin-bottom: 15px;
     text-align: left;
 }
 
 .system-card h3 {
-    font-size: 1.3em; /* Adjusted */
+    font-size: 1.3em;
     color: #2c3e50;
     margin-bottom: 8px;
 }
@@ -176,7 +177,7 @@ section p a:hover {
 }
 .system-card .system-focus strong {
     font-style: normal;
-    color: #3498db;
+    color: #3498db; /* Blue accent */
     font-weight: 600;
 }
 
@@ -206,31 +207,31 @@ section p a:hover {
 }
 
 .expertise-detailed-list li {
-    display: flex; /* This is key for side-by-side icon and text */
+    display: flex;
     align-items: flex-start;
     margin-bottom: 30px;
     background-color: #fdfdfd;
     padding: 20px;
     border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    border-left: 5px solid #e67e22; /* Orange accent */
+    border-left: 5px solid #3498db; /* CHANGED from orange to blue */
 }
 
 .expertise-detailed-list li i { /* Icon styling */
     font-size: 2.2em;
-    color: #e67e22;
-    margin-right: 20px; /* Space between icon and text block */
-    margin-top: 5px; /* Vertical alignment adjustment */
-    min-width: 40px; /* Ensure icon has space */
+    color: #3498db; /* CHANGED from orange to blue */
+    margin-right: 20px;
+    margin-top: 5px;
+    min-width: 40px;
     text-align: center;
 }
 
 .expertise-detailed-list li div { /* Text block container */
-    flex: 1; /* Allows the text block to take remaining space */
+    flex: 1;
 }
 
 .expertise-detailed-list li div h5 {
-    font-size: 1.4em; /* Adjusted */
+    font-size: 1.4em;
     color: #2c3e50;
     margin-bottom: 8px;
 }
@@ -245,18 +246,10 @@ section p a:hover {
 /* Career Journey (Timeline-like) */
 .timeline .timeline-item {
     padding-left: 25px;
-    border-left: 3px solid #3498db;
+    border-left: 3px solid #3498db; /* Blue line */
     position: relative;
     margin-bottom: 25px;
     padding-bottom: 10px;
-}
-
-.timeline .timeline-item:last-child {
-    margin-bottom: 0;
-    border-left: 3px solid transparent;
-}
-.timeline .timeline-item:last-child::before {
-    background-color: #3498db;
 }
 
 .timeline .timeline-item::before {
@@ -266,14 +259,22 @@ section p a:hover {
     top: 0;
     width: 15px;
     height: 15px;
-    background-color: #fff;
-    border: 3px solid #3498db;
+    background-color: #fff; /* Hollow dot */
+    border: 3px solid #3498db; /* Blue border */
     border-radius: 50%;
     z-index: 1;
 }
 
+.timeline .timeline-item:first-child::before {
+    background-color: #3498db; /* Filled blue dot for first item */
+}
+
+.timeline .timeline-item:last-child {
+    margin-bottom: 0;
+}
+
 .timeline .timeline-item h3 {
-    font-size: 1.3em; /* Adjusted */
+    font-size: 1.3em;
     color: #2c3e50;
     margin-bottom: 5px;
 }
@@ -305,7 +306,7 @@ section p a:hover {
 .skill-category h4 {
     font-size: 1.15em;
     color: #2c3e50;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid #3498db; /* Blue border */
     padding-bottom: 5px;
     margin-bottom: 12px;
 }
@@ -316,15 +317,15 @@ section p a:hover {
 
 /* Contact Section */
 .contact-section {
-    background-color: #2c3e50;
+    background-color: #2c3e50; /* Dark blue background */
     color: #ecf0f1;
     text-align: center;
 }
 
 .contact-section h2 {
     color: #ffffff;
-    border-bottom-color: #3498db;
-    font-size: 1.8em; /* Adjusted */
+    border-bottom-color: #3498db; /* Blue border */
+    font-size: 1.8em;
 }
 
 .contact-section p {
@@ -351,15 +352,24 @@ section p a:hover {
     font-size: 1.1em;
 }
 .contact-links a:hover {
-    color: #3498db;
+    color: #3498db; /* Blue hover */
 }
 
+/* CV button already uses .cta-button styles, but we can override if needed */
+/* Specific CV button style if different from main CTA */
 .cv-button {
+    /* Inherits .cta-button styles, now blue. */
+    /* If you wanted it different, e.g., outlined: */
+    /* background-color: transparent; */
+    /* border: 2px solid #3498db; */
+    /* color: #3498db; */
     margin-top: 15px;
-    background-color: #3498db;
 }
 .cv-button:hover {
-    background-color: #2980b9;
+   /* Inherits .cta-button:hover styles, now darker blue background */
+   /* If outlined, maybe: */
+   /* background-color: #3498db; */
+   /* color: #ffffff; */
 }
 
 /* Footer */
