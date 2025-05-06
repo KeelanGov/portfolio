@@ -288,13 +288,11 @@ section p a:hover {
 }
 
 /* Technical Prowess (Skills) */
-/* --- THIS IS THE KEY RULE FOR THE SKILL CATEGORY LAYOUT --- */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
-/* --- END OF KEY SKILL CATEGORY LAYOUT RULE --- */
 
 .skill-category {
     background: #fdfdfd;
@@ -313,7 +311,7 @@ section p a:hover {
 
 .skill-category ul {
     list-style: none;
-    padding-left: 0;
+    padding-left: 0; 
     margin-top: 0;
 }
 
@@ -323,17 +321,42 @@ section p a:hover {
     color: #444;
     padding: 4px 0;
     position: relative;
-    padding-left: 20px;
 }
 
-.skill-category ul li::before {
+/* General skill list item bullet (if you want to keep it for other lists) */
+.skill-category ul:not(.certification-list) li::before {
     content: "•";
     color: #3498db;
     font-weight: bold;
-    display: inline-block;
+    display: inline-block; 
     position: absolute;
     left: 0px;
-    top: 4px;
+    top: 4px; 
+}
+
+.skill-category ul:not(.certification-list) li {
+    padding-left: 20px; /* Ensure li text has space for the bullet if it's present */
+}
+
+
+/* STYLES FOR CERTIFICATIONS */
+.skill-category ul.certification-list li {
+    display: flex; 
+    align-items: center; 
+    padding-left: 0; 
+    margin-bottom: 10px; /* Increased space between certification items */
+}
+
+.skill-category ul.certification-list li::before {
+    content: none; /* Remove the default bullet for certification items */
+}
+
+.certification-logo {
+    width: 30px;  /* Slightly larger for better visibility */
+    height: 30px; 
+    margin-right: 12px; 
+    object-fit: contain; 
+    flex-shrink: 0; /* Prevent logo from shrinking if text is long */
 }
 
 /* Contact Section */
@@ -346,7 +369,7 @@ section p a:hover {
 .contact-section h2 {
     color: #ffffff;
     border-bottom-color: #3498db;
-    font-size: 1.8em;
+    font-size: 1.8em; /* Adjusted from 2em to match other section H2s more closely after centering */
 }
 
 .contact-section p {
@@ -355,6 +378,7 @@ section p a:hover {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1em; /* Ensured consistent bottom margin */
 }
 
 .contact-links {
@@ -365,23 +389,30 @@ section p a:hover {
 
 .contact-links li {
     margin-bottom: 15px;
+    font-size: 1.1em; /* Moved from 'a' to 'li' for consistency of label and link size */
+}
+
+.contact-links li strong { 
+    color: #bdc3c7; /* For labels like "Email:", "LinkedIn:", "Fiverr:" */
+    margin-right: 8px; /* Space between label and link */
 }
 
 .contact-links a {
     color: #ffffff;
     font-weight: 500;
-    font-size: 1.1em;
+    /* font-size: 1.1em; removed, now on li */
+    text-decoration: none; /* Explicitly set no underline */
 }
 .contact-links a:hover {
     color: #3498db;
+    text-decoration: underline; /* Add underline on hover for better UX */
 }
 
 .cv-button {
     margin-top: 15px;
 }
-.cv-button:hover {
-    /* Inherits from .cta-button:hover */
-}
+/* .cv-button:hover inherits from .cta-button:hover */
+
 
 /* Footer */
 footer {
@@ -393,6 +424,7 @@ footer {
     border-top: 1px solid #d1d8db;
 }
 footer p {
+    margin-bottom: 0; /* Removed potential extra margin from general p rule */
     font-style: italic;
 }
 
@@ -418,7 +450,7 @@ footer p {
     }
     .expertise-detailed-list li {
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* Center items when stacked */
         text-align: center;
     }
     .expertise-detailed-list li i {
@@ -429,12 +461,23 @@ footer p {
         text-align: center;
     }
      .expertise-detailed-list li div h5 {
-        text-align: center;
+        text-align: center; /* Ensured h5 is also centered */
     }
-    .skill-category ul li {
-        /* Adjust padding/bullet position for mobile if needed */
+
+    .skill-category ul:not(.certification-list) li {
+        padding-left: 20px; /* Adjust padding/bullet position for mobile if needed */
     }
-    .skill-category ul li::before {
+    .skill-category ul:not(.certification-list) li::before {
         /* Adjust bullet position for mobile if needed */
+    }
+
+    .certification-logo {
+        width: 24px; /* Slightly smaller logos on mobile */
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    .contact-links li {
+        font-size: 1em; /* Slightly smaller contact links on mobile */
     }
 }
